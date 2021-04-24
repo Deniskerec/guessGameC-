@@ -78,10 +78,10 @@ void LastCalculation()
     }
 }
 
-bool PlayGame()
+bool PlayGame(int Difficutly)
 {
 
-    PrintIntruduction(1);
+    PrintIntruduction(Difficutly);
 
 
     // This is what the player is guessing: 
@@ -147,9 +147,10 @@ bool PlayGame()
 int main()
 {   
     int LevelDifficulty = 1;
-    while(true)
+
+    while (true)
     {   
-        bool bLevelComplete = PlayGame();
+        bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear();
         std::cin.ignore();
 
