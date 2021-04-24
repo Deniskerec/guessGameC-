@@ -15,9 +15,9 @@ using namespace std;
 
     string PlayerName; 
        //this numbers are thee target 
-    const int NumberOne = 2;
-    const int NumberTwo = 5;
-    const int NumberThree = 5;
+    const int NumberOne = rand();
+    const int NumberTwo = rand();
+    const int NumberThree = rand ();
 
     //this numbers is the anser of the player 
     int PlayerOne ,PlayerTwo ,PlayerThree ;
@@ -32,9 +32,9 @@ void PrintIntruduction(int Difficulty)
     //introduction
 
 
-    std::cout << "\n\n hy, what is your name ? \n" ;
-    std:cin >> PlayerName;
-    std::cout << "hello dear virgin " << PlayerName << "!" << endl;
+    //std::cout << "\n\n hy, what is your name ? \n" ;
+    //std:cin >> PlayerName;
+    std::cout << "hello dear virgin !" << endl;
     std::cout << "You have entered the dungen of the virgin-taker. This is lvl " << Difficulty << endl;
     std::cout << "You have to defeat 3 levels of hard mathematical tests to prove that you are a nerd indded ! " << endl;
     std::cout << "!!! PLEASE, bare in mind, that every chalange will be harder !!!  " << endl;
@@ -46,7 +46,7 @@ void PrintIntruduction(int Difficulty)
     std::cout << "Please enter the 3 numbers with one whitespace between the numbers: " << endl;
 }
 
-void LastCalculation() 
+bool LastCalculation() 
 {
     int PlayerSum = PlayerOne * PlayerTwo * PlayerThree ;
     int PlayerAdd = PlayerOne + PlayerTwo + PlayerThree ;
@@ -69,12 +69,14 @@ void LastCalculation()
     // compare player vs program sum and product 
 
     if(ProgramSum == PlayerSum)
-    {  
-        std::cout << "\n you win";
+    {   
+        std::cout << "\n you win \n ";
+        return true;
 
     }else 
     {
-        std::cout << "\n you lose";
+        std::cout << "\n you lose \n";
+        return false;
     }
 }
 
@@ -147,8 +149,9 @@ bool PlayGame(int Difficutly)
 int main()
 {   
     int LevelDifficulty = 1;
+    const int MaxDifficulty = 3;
 
-    while (true)
+    while (LevelDifficulty <= MaxDifficulty)
     {   
         bool bLevelComplete = PlayGame(LevelDifficulty);
         std::cin.clear();
@@ -157,11 +160,12 @@ int main()
         if (bLevelComplete) 
         {   
             ++LevelDifficulty;
-        }else 
+        }else
         {
-            "this is the end";
+
         }
     }
+    std::cout << "\n*** Great work, you can go s3xy";
     return 0;
 }
 
